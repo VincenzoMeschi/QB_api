@@ -17,20 +17,23 @@ app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true }));
 
 const corsOptions = {
-	origin: ["https://rufftv.com", "https://www.rufftv.com", "https://admin.rufftv.com"], // or '*' for testing purposes
-	methods: "GET,POST,PUT,DELETE",
-	credentials: true,
+    origin: [
+        "https://https://d2z3ix7qvo5095.cloudfront.net",
+        "https://d37ghi81avii0s.cloudfront.net",
+    ], // or '*' for testing purposes
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true,
 };
 app.use(cors(corsOptions));
 
 mongoose
-	.connect(process.env.MONGO_URI)
-	.then(() => {
-		console.log(`Mongoose has connected to MongoDB Cluster0`);
-	})
-	.catch((err) => {
-		console.log(`Mongoose COULD NOT connect to MongoDB: ${err}`);
-	});
+    .connect(process.env.MONGO_URI)
+    .then(() => {
+        console.log(`Mongoose has connected to MongoDB Cluster0`);
+    })
+    .catch((err) => {
+        console.log(`Mongoose COULD NOT connect to MongoDB: ${err}`);
+    });
 
 app.use(cors());
 app.use("/api/auth", authRoute);
@@ -39,9 +42,9 @@ app.use("/api/movies", movieRoute);
 app.use("/api/lists", listRoute);
 
 app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "../client/build/index.html"));
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
 app.listen(PORT, () => {
-	console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });

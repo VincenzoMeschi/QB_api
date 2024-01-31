@@ -17,7 +17,7 @@ app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true }));
 
 const corsOptions = {
-	origin: ["https://rufftv.com", "https://admin.rufftv.com"], // or '*' for testing purposes
+	origin: ["https://rufftv.com", "https://www.rufftv.com", "https://admin.rufftv.com"], // or '*' for testing purposes
 	methods: "GET,POST,PUT,DELETE",
 	credentials: true,
 };

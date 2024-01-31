@@ -27,7 +27,7 @@ export async function generateMovieUploadURL(Key) {
 		s3,
 		new PutObjectCommand({
 			Bucket: bucketName,
-			Key: `movies/full_trailer/${Key}`,
+			Key: `movies/${Key}`,
 		}),
 		{
 			expiresIn: 30,
@@ -42,7 +42,7 @@ export async function deleteMovieFromS3(Key) {
 		s3,
 		new DeleteObjectCommand({
 			Bucket: bucketName,
-			Key: `movies/full_trailer/${Key}`,
+			Key: `movies/${Key}`,
 		}),
 		{
 			expiresIn: 30,

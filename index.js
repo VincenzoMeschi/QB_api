@@ -18,8 +18,9 @@ app.use(express.urlencoded({ extended: true }));
 
 const corsOptions = {
     origin: [
-        "https://https://d2z3ix7qvo5095.cloudfront.net",
-        "https://d37ghi81avii0s.cloudfront.net",
+        "https://https://www.dothisdrill.com",
+        "https://dothisdrill.com",
+        "https://admin.dothisdrill.com",
     ], // or '*' for testing purposes
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
